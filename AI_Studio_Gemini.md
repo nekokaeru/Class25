@@ -2,7 +2,7 @@
 
 #### **1. はじめに**
 
-近年，生成 AI (Artificial Intelligence, AI) が注目を集めている．しかし，一般に「ChatGPT」という名称が指すものは，ユーザーが対話するためのユーザーインターフェース (User Interface, UI) であり，その背後で動作する大規模言語モデル (Large Language Model, LLM) そのものではない．例えば OpenAI 社が提供するサービスでは，ChatGPT という UI を通じて，GPT-4o や GPT-4 Turbo といった LLM を利用する．
+近年，生成 AI (Artificial Intelligence, AI) が注目を集めている．しかし，一般に「ChatGPT」という名称が指すものは，ユーザーが対話するためのユーザーインターフェース (User Interface, UI) であり，その背後で動作する大規模言語モデル (Large Language Model, LLM) そのものではない．例えば OpenAI 社が提供するサービスでは，ChatGPT という UI を通じて，GPT-4o や o3 といった LLM を利用する．
 
 この関係は，Google 社が提供する生成 AI でも同様である．Web ブラウザ上で利用できる Google AI Studio は UI であり，その内部では Gemini と呼ばれる LLM が動作している．
 
@@ -30,7 +30,7 @@
 
 1.  Web ブラウザで Google AI Studio ([https://aistudio.google.com/](https://aistudio.google.com/)) にアクセスし，自身の Google アカウントでログインする．
 2.  チャット形式の入力画面でプロンプト（指示文）を入力し，AI との対話を試みる．
-3.  画面右上では，対話に使用するモデルを選択できる．高性能な「Gemini 1.5 Pro」や高速・軽量な「Gemini 1.5 Flash」の違いを体感されたい．なお，これらのモデル名は UI 上での表示名であり，プログラムから利用する際は後述する `gemini-1.5-pro-latest` のようなモデル ID で指定する．
+3.  画面右上では，対話に使用するモデルを選択できる．高性能な「Gemini 2.5 Pro」や高速・軽量な「Gemini 1.5 Flash」の違いを体感せよ．なお，これらのモデル名は UI 上での表示名であり，プログラムから利用する際は後述する `gemini-1.5-pro-latest` のようなモデル ID で指定する．
 
 ##### **3.1 AI Studio の学習補助ツールとしての活用**
 
@@ -129,7 +129,7 @@ except Exception as e:
 
 Gemini API では，用途やコストに応じて複数のモデルを使い分けることが可能である．
 
-*   **`gemini-1.5-pro-latest`**: 性能を最も重視する場合の最上位モデル．複雑な推論や質の高い文章生成に適する．
+*   **`gemini-2.5-pro`**: 性能を最も重視する場合の最上位モデル．複雑な推論や質の高い文章生成に適する．
 *   **`gemini-1.5-flash-latest`**: 速度と効率に特化した軽量モデル．応答が非常に速いため，チャットボットのようなリアルタイム性が重要なアプリに向いている．
 
 モデルを切り替えるには，`model="..."` の ID を書き換えるだけでよい．
@@ -137,7 +137,7 @@ Gemini API では，用途やコストに応じて複数のモデルを使い分
 ```python
 # 高性能モデル (Pro) を利用する場合
 # response = client.models.generate_content(
-#     model="gemini-1.5-pro-latest",
+#     model="gemini-2.5-pro",
 #     contents="50語程度の英文を自然な日本語に翻訳せよ．"
 # )
 
